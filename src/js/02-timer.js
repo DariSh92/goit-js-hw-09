@@ -81,6 +81,7 @@ const flatpick = flatpickr('#datetime-picker', { ...options });
 function onInputClick() {
   if (options.defaultDate > flatpick.selectedDates[0]) {
     Notiflix.Notify.failure('Please, choose a date in the future');
+    startBtn.disabled = true;
   } else {
     startBtn.disabled = false;
     userSelectedDate = flatpick.selectedDates[0];
